@@ -1,0 +1,15 @@
+/* Font */
+@import "./fonts.css";
+
+/* Main classes */
+@import "./buttons.css";
+@import "./misc.css";
+@import "./backgrounds.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply text-dark;
+}

@@ -1,10 +1,9 @@
 <template>
-  <div class="">
-    <h1 class="">Login Page</h1>
-    <p>This page can be accesed by guests</p>
-    <LoginForm />
-    <LoginCredentials />
-  </div>
+  <FormHolder>
+    <h1 class="text-center mb-4 text-xl font-bold">Esegui il Login</h1>
+    <FormLogin />
+  </FormHolder>
+  <LoginCredentials />
 </template>
 <script setup>
 definePageMeta({

@@ -1,18 +1,18 @@
 <template>
-  <div class="min-h-screen flex flex-col bg-slate-900 text-white">
-    <header class="p-3 mx-auto w-full max-w-4xl">
-      <nav class="flex gap-3 text-white">
+  <div class="min-h-screen flex flex-col text-white">
+    <header class="flex justify-center bg-blur p-3 mx-auto w-full shadow-md">
+      <nav class="w-2/4 flex gap-3 text-white"> 
         <NuxtLink to="/" class="underline">Home</NuxtLink>
         <NuxtLink to="/public" class="underline">Public</NuxtLink>
         <NuxtLink to="/private" v-if="authUser" class="underline">Private</NuxtLink>
-        <NuxtLink to="/admin" v-if="userAdmin" class="underline">Admin</NuxtLink>
-        <NuxtLink
-          class="ml-auto text-black py-1 px-2 rounded bg-light-100 hover bg-white"
-          to="/login"
+        <NuxtLink to="/admin" v-if="isAdmin" class="underline">Admin</NuxtLink>
+        <button
+          class="ml-auto btn-primary" 
+          :disabled="form.pending"
+          @click="callToAction()"
         >
-          <span v-if="!authUser">Login</span>
-          <span v-else @click="logout()">Logout</span>
-        </NuxtLink>
+          {{ form.callToActionText }}
+        </button>
       </nav>
     </header>
     <main class="p-3 mx-auto w-full max-w-4xl">
@@ -20,7 +20,60 @@
     </main>
   </div>
 </template>
+
 <script lang="ts" setup>
-const authUser = useAuthUser()
-const { userAdmin, logout } = await useAuth()
+  const authUser: any = useAuthUser()
+  const { isAdmin, logout } = await useAuth()
+  const router = useRouter()
+
+  const form = reactive({
+    pending: false,
+    callToActionText: "Login"
+  });
+
+  async function logOut() {
+    try {
+      form.pending = true;
+
+      await logout();
+
+      await navigateTo("/");
+    } catch (error) {
+      console.error(error);
+    } finally {
+      form.pending = false;
+    }
+  }
+
+  async function logIn() {
+    await navigateTo("/login")
+  }
+
+  async function callToAction() {
+    if(authUser.value){
+      await logOut()
+    }else{
+      await logIn()
+    }
+  }
+
+  async function updateCallToActionText() {
+    if(authUser.value){
+      form.callToActionText = "Logout"
+    }else{
+      form.callToActionText = "Login"
+    }
+  }
+
+  watch(authUser, () => {
+    updateCallToActionText();
+  });
+  
+  updateCallToActionText()
 </script>
+
+<style setup>
+  body {
+    background-image: url(~/assets/images/background.png);
+  }
+</style>

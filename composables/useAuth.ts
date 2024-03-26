@@ -1,6 +1,6 @@
 export const useAuth = () => {
     const authUser = useAuthUser()
-    const userAdmin = useState<boolean>('userAdmin', () => false)
+    const isAdmin = useState<boolean>('isAdmin', () => false)
     const setUser = (user: User) => {
         authUser.value = user
     }
@@ -12,9 +12,9 @@ export const useAuth = () => {
             })
             console.log(data)
             if (data.isAdmin) {
-                userAdmin.value = true
+                isAdmin.value = true
             } else {
-                userAdmin.value = false
+                isAdmin.value = false
             }
             setUser(data.user)
             return data
@@ -24,7 +24,7 @@ export const useAuth = () => {
     }
     const userLoggedIn = async () => {
         if (!authUser.value) {
-            const data = await $fetch('/api/user/token', {
+            const data: any = await $fetch('/api/user/token', {
                 headers: useRequestHeaders(['cookie'])
             })
             setUser(data.user)
@@ -32,15 +32,16 @@ export const useAuth = () => {
         }
     }
     const logout = async () => {
-        const data = await $fetch('/api/user/logout')
-        userAdmin.value = false
+        const data: any = await $fetch('/api/user/logout')
+        isAdmin.value = false
         setUser(data.user)
         return data
     }
+
     return {
         login,
         userLoggedIn,
-        userAdmin,
+        isAdmin,
         logout,
         authUser
     }

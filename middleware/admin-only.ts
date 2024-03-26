@@ -1,6 +1,6 @@
 export default defineNuxtRouteMiddleware(async (_to, from) => {
-    const { userAdmin  } = useAuth()
-    if (!userAdmin.value) {
+    const { isAdmin  } = useAuth()
+    if (!isAdmin.value) {
         return navigateTo({name: "login"})
     }
 })

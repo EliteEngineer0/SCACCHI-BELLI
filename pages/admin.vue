@@ -1,10 +1,12 @@
 <template>
-    <div>
-        <h1>Admin Page</h1>
-        <p>This page should only be visible if user is logged in and has admin role</p>
-    </div>
-    <div v-for="user in users">
-    
+    <div class="text-dark">
+        <div>
+            <h1>Admin Page</h1>
+            <p>This page should only be visible if user is logged in and has admin role</p>
+        </div>
+        <div v-for="user in users">
+        
+        </div>
     </div>
 </template>
 <script lang="ts" setup>

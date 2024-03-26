@@ -1,5 +1,5 @@
-<template>
-  <div class="text-white">
+<template >
+  <div class="text-dark">
     <div class="text-center">
       <h1>Home</h1>
       <div>

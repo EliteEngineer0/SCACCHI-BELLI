@@ -1,0 +1,14 @@
+@layer components {
+  .bg-default {
+    @apply bg-slate-700;
+  }
+
+  .bg-blur {
+    @apply bg-opacity-90 bg-slate-800;
+    backdrop-filter: blur(2px);
+  }
+
+  .bg-light {
+    @apply bg-slate-600;
+  }
+}
