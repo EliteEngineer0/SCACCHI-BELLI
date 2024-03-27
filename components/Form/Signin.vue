@@ -11,15 +11,16 @@
         <label for="password" class="mb-1 inline-block font-semibold text-sm text-slate-200">Password</label>
         <input id="password" v-model="form.data.password" type="password" class="input px-3 py-1.5 w-full" required />
       </div>
-      <div class="mb-3 flex justify-end items-center">
-        <label for="remember-me" class="mr-1 text-sm text-light-100">Remember me</label>
-        <input id="remember-me" v-model="form.data.rememberMe" type="checkbox" class="w-4 h-4 checkbox-primary" />
+      <div class="mb-3">
+        <label for="confirmPassword" class="mb-1 inline-block font-semibold text-sm text-slate-200">Confirm Password</label>
+        <input id="confirmPassword" v-model="form.data.confirmPassword" type="password" class="input px-3 py-1.5 w-full" required />
       </div>
+
       <div>
-        <button type="submit" :disabled="form.pending" class="btn-primary w-full mt-1">Log in</button>
+        <button type="submit" :disabled="form.pending" class="btn-primary w-full mt-1">Sign in</button>
       </div>
   
-      <NuxtLink to="/signin" class="text-link-primary py-3">Non hai ancora un account?</NuxtLink>
+      <NuxtLink to="/login" class="text-link-primary py-3">Hai già un account?</NuxtLink>
     </form>
   </template>
   
