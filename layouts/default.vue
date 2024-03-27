@@ -1,18 +1,29 @@
 <template>
   <div class="min-h-screen flex flex-col text-white">
     <header class="flex justify-center bg-blur p-3 mx-auto w-full shadow-md">
-      <nav class="w-2/4 flex gap-3 text-white"> 
+      <nav class="w-3/4 flex gap-3 text-white"> 
         <NuxtLink to="/" class="underline">Home</NuxtLink>
         <NuxtLink to="/public" class="underline">Public</NuxtLink>
         <NuxtLink to="/private" v-if="authUser" class="underline">Private</NuxtLink>
         <NuxtLink to="/admin" v-if="isAdmin" class="underline">Admin</NuxtLink>
-        <button
-          class="ml-auto btn-primary" 
-          :disabled="form.pending"
-          @click="callToAction()"
-        >
-          {{ form.callToActionText }}
-        </button>
+        <!-- Signin -->
+        <div class="ml-auto items-center">
+          <button
+            v-if="!authUser"
+            class="btn-stealth me-3" 
+            @click="signIn()"
+          >
+            Signin
+          </button>
+          <!-- Login and Logout -->
+          <button
+            class="btn-primary" 
+            :disabled="form.pending"
+            @click="callToAction()"
+          >
+            {{ form.callToActionText }}
+          </button>
+        </div>
       </nav>
     </header>
     <main class="p-3 mx-auto w-full max-w-4xl">
@@ -47,6 +58,10 @@
 
   async function logIn() {
     await navigateTo("/login")
+  }
+
+  async function signIn() {
+    await navigateTo("/signin")
   }
 
   async function callToAction() {

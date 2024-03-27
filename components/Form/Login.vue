@@ -1,8 +1,8 @@
 <template>
   <form @submit.prevent="onLoginClick">
-    <FormsError v-if="form.error">
-      {{ form.error }}
-    </FormsError>
+    <FormError v-if="form.error">
+        {{ form.error }}
+      </FormError>
     <div class="mb-3">
       <label for="email" class="mb-1 inline-block font-semibold text-sm text-slate-200">Email address</label>
       <input id="email" v-model="form.data.email" type="email" class="input px-3 py-1.5 w-full" required />

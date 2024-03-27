@@ -6,5 +6,10 @@ export default defineNuxtConfig({
     tokenExpiration: process.env.TOKEN_EXPIRES,
     tokenName: process.env.TOKEN_NAME
   },
-  modules: ['@nuxtjs/tailwindcss']
+
+  modules: ['@nuxtjs/tailwindcss'],
+
+  devtools: {
+    enabled: true
+  }
 })
