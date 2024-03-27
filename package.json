@@ -12,13 +12,16 @@
     "@nuxtjs/tailwindcss": "^6.6.7",
     "@types/node": "^18",
     "netlify-cli": "^14.3.1",
-    "nuxt": "^3.4.2"
+    "nuxt": "^3.11.1",
+    "prisma": "^5.11.0"
   },
   "dependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxtjs/eslint-module": "^4.1.0",
     "@prisma/client": "^5.11.0",
     "@types/bcryptjs": "^2.4.2",
     "@types/jsonwebtoken": "^9.0.2",
+    "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "install": "^0.13.0",
     "jsonwebtoken": "^9.0.0",

@@ -5,9 +5,15 @@ interface User {
     role: string[]
 }
 
-interface UserInput {
+interface UserLoginInput {
     email: string
-    password:string
+    password: string
+}
+
+interface UserSigninInput {
+    email: string
+    password: string
+    confirmPassword: string
 }
 
 interface UserWithoutPassword {

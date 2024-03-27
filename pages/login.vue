@@ -1,6 +1,6 @@
 <template>
   <FormHolder>
-    <h1 class="text-center mb-4 text-xl font-bold">Esegui il Login</h1>
+    <FormTitle>Esegui il Login</FormTitle>
     <FormLogin />
   </FormHolder>
 </template>

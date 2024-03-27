@@ -2,7 +2,7 @@
   <form @submit.prevent="onLoginClick">
     <FormError v-if="form.error">
         {{ form.error }}
-      </FormError>
+    </FormError>
     <div class="mb-3">
       <label for="email" class="mb-1 inline-block font-semibold text-sm text-slate-200">Email address</label>
       <input id="email" v-model="form.data.email" type="email" class="input px-3 py-1.5 w-full" required />
@@ -42,12 +42,12 @@
       form.error = "";
       form.pending = true;
 
-      await login(form.data);
+      var res = await login(form.data);
 
       const redirect = isAdmin.value ? "/admin" : "/private";
       await navigateTo(redirect);
     } catch (error: any) {
-      console.error(error);
+      console.log(error.data);
 
       if (error.data.message) form.error = error.data.message;
     } finally {

@@ -35,7 +35,7 @@
       pending: false,
     });
   
-    const { login, isAdmin } = await useAuth()
+    const { signin } = await useAuth()
     //const router = useRouter()
     
     async function onSigninClick() {
@@ -43,9 +43,9 @@
         form.error = "";
         form.pending = true;
   
-        await login(form.data);
+        await signin(form.data);
   
-        const redirect = isAdmin.value ? "/admin" : "/private";
+        const redirect = "/login";
         await navigateTo(redirect);
       } catch (error: any) {
         console.error(error);

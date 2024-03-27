@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken"
-const createToken = async (user: User) => {
+const createToken = async (user) => {
   const config = useRuntimeConfig()
   return await jwt.sign(
     {
@@ -13,7 +13,7 @@ const createToken = async (user: User) => {
     }
   )
 }
-const verifyToken = async (token: string) => {
+const verifyToken = async (token) => {
   try {
   const config = useRuntimeConfig()
   return await jwt.verify(token, config.tokenSecret)

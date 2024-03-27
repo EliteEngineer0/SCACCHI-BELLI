@@ -26,7 +26,7 @@
         </div>
       </nav>
     </header>
-    <main class="p-3 mx-auto w-full max-w-4xl">
+    <main class="p-3 mx-auto w-full">
       <slot />
     </main>
   </div>

@@ -4,7 +4,23 @@ export const useAuth = () => {
     const setUser = (user: User) => {
         authUser.value = user
     }
-    const login = async (user: UserInput) => {
+    const login = async (user: UserLoginInput) => {
+        const data = await $fetch('/api/user/login', {
+            method: 'POST',
+            body: user
+        })
+        //console.log(data)
+        if (data.isAdmin) {
+            isAdmin.value = true
+        } else {
+            isAdmin.value = false
+        }
+        setUser(data.user)
+
+        return {data: data}
+    }
+
+    const sigin = async (user: UserSigninInput) => {
         try {
             const data = await $fetch('/api/user', {
                 method: 'POST',
@@ -22,6 +38,7 @@ export const useAuth = () => {
             return null
         }
     }
+
     const userLoggedIn = async () => {
         if (!authUser.value) {
             const data: any = await $fetch('/api/user/token', {
