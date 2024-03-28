@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     tokenName: process.env.TOKEN_NAME
   },
 
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss','nuxt-icon'],
 
   devtools: {
     enabled: true

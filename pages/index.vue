@@ -1,14 +1,8 @@
 <template >
-  <div class="text-dark">
-    <div class="text-center">
-      <h1>Home</h1>
-      <div>
-        Simple authentication with Nuxt3
-        <span v-if="authUser">current user: {{ authUser.email }}</span>
-      </div>
+  <div class="text-dark text-center">
+    <div>
+      <h1 class="text-2xl">Benvenuto!</h1>
+      <p class="mt-4">Questo è un sito fantastico di scacchi.</p>
     </div>
   </div>
 </template>
-<script lang="ts" setup>
-const {authUser} = await useAuth()
-</script>

@@ -1,6 +1,6 @@
 <template>
     <FormHolder>
-        <h1 class="text-center mb-4 text-xl font-bold">Esegui la registrazione</h1>
+        <FormTitle>Registrati</FormTitle>
         <FormSignin />
     </FormHolder>
 </template>

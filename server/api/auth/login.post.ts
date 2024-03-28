@@ -8,12 +8,13 @@ export default defineEventHandler(async (event) => {
         const isAdmin = user.role === "admin"
         setCookie(event, "__session", token)
         
+        // Let the client know what user they logged in as
         return {
             user,
             token,
             isAdmin
         }
-    }catch(err){
-        throw new Error(err)
+    }catch(error: any){ 
+        throw new Error(error.message)
     }
 })

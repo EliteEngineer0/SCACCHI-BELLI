@@ -5,7 +5,7 @@ export const useAuth = () => {
         authUser.value = user
     }
     const login = async (user: UserLoginInput) => {
-        const data = await $fetch('/api/user/login', {
+        const data = await $fetch('/api/auth/login', {
             method: 'POST',
             body: user
         })
@@ -20,20 +20,12 @@ export const useAuth = () => {
         return {data: data}
     }
 
-    const sigin = async (user: UserSigninInput) => {
+    const signin = async (user: UserSigninInput) => {
         try {
-            const data = await $fetch('/api/user', {
+            await $fetch('/api/auth/signin', {
                 method: 'POST',
                 body: user
             })
-            console.log(data)
-            if (data.isAdmin) {
-                isAdmin.value = true
-            } else {
-                isAdmin.value = false
-            }
-            setUser(data.user)
-            return data
         } catch (err) {
             return null
         }
@@ -41,7 +33,7 @@ export const useAuth = () => {
 
     const userLoggedIn = async () => {
         if (!authUser.value) {
-            const data: any = await $fetch('/api/user/token', {
+            const data: any = await $fetch('/api/auth/token', {
                 headers: useRequestHeaders(['cookie'])
             })
             setUser(data.user)
@@ -49,7 +41,7 @@ export const useAuth = () => {
         }
     }
     const logout = async () => {
-        const data: any = await $fetch('/api/user/logout')
+        const data: any = await $fetch('/api/auth/logout')
         isAdmin.value = false
         setUser(data.user)
         return data
@@ -57,9 +49,10 @@ export const useAuth = () => {
 
     return {
         login,
+        signin,
+        logout,
         userLoggedIn,
         isAdmin,
-        logout,
         authUser
     }
 }

@@ -3,15 +3,19 @@
       <FormError v-if="form.error">
         {{ form.error }}
       </FormError>
-      <div class="mb-3">
-        <label for="email" class="mb-1 inline-block font-semibold text-sm text-slate-200">Email address</label>
+      <div class="mb-1">
+        <label for="email" class="mb-1 inline-block font-semibold text-sm text-slate-200">Email</label>
         <input id="email" v-model="form.data.email" type="email" class="input px-3 py-1.5 w-full" required />
       </div>
-      <div class="mb-3">
+      <div class="mb-4">
+        <label for="username" class="mb-1 inline-block font-semibold text-sm text-slate-200">Username</label>
+        <input id="username" v-model="form.data.username" type="username" class="input px-3 py-1.5 w-full" required />
+      </div>
+      <div class="mb-1">
         <label for="password" class="mb-1 inline-block font-semibold text-sm text-slate-200">Password</label>
         <input id="password" v-model="form.data.password" type="password" class="input px-3 py-1.5 w-full" required />
       </div>
-      <div class="mb-3">
+      <div class="mb-6">
         <label for="confirmPassword" class="mb-1 inline-block font-semibold text-sm text-slate-200">Confirm Password</label>
         <input id="confirmPassword" v-model="form.data.confirmPassword" type="password" class="input px-3 py-1.5 w-full" required />
       </div>
@@ -28,6 +32,7 @@
     const form: any = reactive({
       data: {
         email: "",
+        username: "",
         password: "",
         confirmPassword: "",
       },

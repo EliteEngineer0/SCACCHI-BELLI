@@ -26,4 +26,10 @@
   .text-link-secondary {
     @apply text-gray-400 hover:text-gray-500;
   }
+
+  .navbar-link {
+    @apply h-full break-after-avoid flex justify-center items-center gap-2;
+    /* Outline */
+    @apply hover:outline hover:outline-white outline-offset-4 outline-1 rounded-sm
+  }
 }

@@ -1,6 +1,6 @@
 <template>
   <FormHolder>
-    <FormTitle>Esegui il Login</FormTitle>
+    <FormTitle>Accedi</FormTitle>
     <FormLogin />
   </FormHolder>
 </template>
