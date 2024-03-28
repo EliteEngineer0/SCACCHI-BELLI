@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen flex flex-col text-white">
     <header class="flex justify-center bg-blur p-4 mx-auto w-full shadow-md">
-      <nav class="w-full lg:w-3/4 md:w-full xl:w-2/4 flex gap-5 text-white"> 
+      <nav class="w-full lg:w-3/4 md:w-full xl:w-3/4 flex gap-5 text-white"> 
         <!-- Home -->
         <NuxtLink to="/" class="navbar-link">
           <Icon name="teenyicons:home-solid" color="white" class="h-full text-2xl text-center"/>

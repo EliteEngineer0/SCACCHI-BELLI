@@ -5,7 +5,7 @@
             <p>Solo gli admin possono vedere questa pagina!</p>
         </div>
         <div class="flex justify-center">
-            <table class="table-auto">
+            <table class="table table-auto">
                 <thead>
                     <tr>
                         <th>Email</th>
@@ -16,6 +16,8 @@
                 </tbody>
             </table>
         </div>
+
+        <UTable :rows="users" />
     </div>
 </template>
 <script lang="ts" setup>
