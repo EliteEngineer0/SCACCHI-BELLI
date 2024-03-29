@@ -21,14 +21,10 @@ export const useAuth = () => {
     }
 
     const signin = async (user: UserSigninInput) => {
-        try {
-            await $fetch('/api/auth/signin', {
-                method: 'POST',
-                body: user
-            })
-        } catch (err) {
-            return null
-        }
+        await $fetch('/api/auth/signin', {
+            method: 'POST',
+            body: user
+        })
     }
 
     const userLoggedIn = async () => {

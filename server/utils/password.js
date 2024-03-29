@@ -1,11 +1,7 @@
 import bcrypt from "bcryptjs"
 
 export const verifyPassword = async (password, hash) => {
-    const compare = await bcrypt.compare(password, hash)
-    if (!compare) {
-        throw new Error('Password does not match')
-    }
-    return compare
+    return await bcrypt.compare(password, hash)
 }
 
 export const hashPassword = async (password) => {
