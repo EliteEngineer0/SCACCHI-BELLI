@@ -5,14 +5,14 @@
         <p class="mt-4">Guarda i post.</p>
       </div>
 
-      <table class="border-collapse table-auto w-full text-sm">
+      <table class="table-auto w-full text-md m-4">
         <thead>
-          <tr>
+          <tr class="bg-blur text-white">
             <th>ID</th>
             <th>Content</th>
           </tr>
         </thead>
-        <tbody id="example-1">
+        <tbody id="example-1" class="bg-white">
           <tr v-for="post in posts" :key="post.id">
             <td><a>{{ post.id }}</a></td>
             <td>{{ post.content }}</td> 
