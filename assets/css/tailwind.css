@@ -5,6 +5,7 @@
 @import "./buttons.css";
 @import "./misc.css";
 @import "./backgrounds.css";
+@import "./header.css";
 
 @tailwind base;
 @tailwind components;

@@ -6,6 +6,13 @@ interface User {
     role: string;
 }
 
+interface Post{
+    id: string
+    title: string
+    content: string
+    authorId: string
+}
+
 interface UserLoginInput {
     email: string
     password: string

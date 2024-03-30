@@ -16,8 +16,6 @@
                 </tbody>
             </table>
         </div>
-
-        <UTable :rows="users" />
     </div>
 </template>
 <script lang="ts" setup>

@@ -1,4 +1,4 @@
-import { createUser, getUserByEmail, getUserByUsername } from "../db/user"
+import { createUser, getUserByEmail, getUserByUsername } from "../db/users"
 import { verifyPassword } from "../utils/password"
 
 const loginUser = async (user: User) => {

@@ -1,0 +1,20 @@
+@layer components {
+    .navbar-link {
+        @apply h-full break-after-avoid flex justify-center items-center gap-2;
+        /* Outline */
+        @apply hover:outline hover:outline-white outline-offset-4 outline-1 rounded-sm;
+    }
+
+    /* make the header icon fit in a square aspect ratio */
+    .header-icon {
+        @apply h-full size-10 sm:size-8;
+    }
+
+    Icon {
+        @apply aspect-square;
+    }
+
+    .header-text {
+        @apply font-bold align-middle hidden sm:block;
+    }
+}

@@ -4,20 +4,26 @@
       <nav class="w-full lg:w-3/4 md:w-full xl:w-3/4 flex gap-5 text-white"> 
         <!-- Home -->
         <NuxtLink to="/" class="navbar-link">
-          <Icon name="teenyicons:home-solid" color="white" class="h-full text-2xl text-center"/>
-          <h1 class="font-bold align-middle">Home</h1>
+          <Icon name="teenyicons:home-solid" color="white" class="header-icon"/>
+          <h1 class="header-text">Home</h1>
         </NuxtLink>
         <!-- Profile -->
         <NuxtLink to="/private" v-if="authUser" class="navbar-link">
-          <Icon name="iconamoon:profile-circle-fill" color="white" class="h-full text-3xl text-center"/>
-          <h1 class="font-bold align-middle">Profilo</h1>
+          <Icon name="iconamoon:profile-circle-fill" color="white" class="header-icon"/>
+          <h1 class="header-text">Profilo</h1>
+        </NuxtLink>
+        <!-- Forum -->
+        <NuxtLink to="/forum" v-if="authUser" class="navbar-link">
+          <Icon name="material-symbols:forum" color="white" class="header-icon"/>
+          <h1 class="header-text">Forum</h1>
         </NuxtLink>
         <!-- Admin -->
         <NuxtLink to="/admin" v-if="isAdmin" class="navbar-link">
-          <Icon name="uis:lock-access" color="white" class="h-full text-3xl text-center"/>
-          <h1 class="font-bold align-middle">Admin</h1>
+          <Icon name="uis:lock-access" color="white" class="header-icon"/>
+          <h1 class="header-text">Admin</h1>
         </NuxtLink>
-        
+
+        <!-- icon="material-symbols:forum" -->
         <!-- Signin -->
         <div class="ml-auto break-inside-avoid">
           <button

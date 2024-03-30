@@ -1,32 +1,29 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
 export { prisma }
 
 // async function seed() {
-//   const usersData = [
+//   // Create posts
+//   const postsData = [
 //     {
-//         email: "admin@gmail.com",
-//         username: "admin",
-//         password: "$2a$10$q9RCHgoDplabHe/iq5HkduFSe6/o3DLjmkW6b8j6AyLpPIvwqRpeq",
-//         role: "admin"
+//       userId: 1, // Assuming admin user is at index 0
+//       content: "Che sito schifoso!",
 //     },
 //     {
-//         email: "user@gmail.com",
-//         username: "user",
-//         password: "$2a$10$3zU3itd/AiI8XBtx8W.HreBBtJdUlGP0GE0Os3/hbceXjYjmtj6HG",
-//         role: "user"
+//       userId: 2, // Assuming user user is at index 1
+//       content: "Ciao a tutti!!!!!!!",
 //     }
-//     // Add more user data as needed
+//     // Add more post data as needed
 //   ];
 
-//   for (const userData of usersData) {
-//     await prisma.user.create({
-//       data: userData,
-//     });
-//     console.log(`User created: ${userData.username}`);
-//   }
+//   const createdPosts = await Promise.all(postsData.map(postData =>
+//     prisma.post.create({
+//       data: postData,
+//     })
+//   ));
+//   console.log("Posts created:", createdPosts);
 // }
 
 // seed()
