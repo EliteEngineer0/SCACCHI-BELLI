@@ -10,7 +10,7 @@
         <!-- Profile -->
         <NuxtLink to="/private" v-if="authUser" class="navbar-link">
           <Icon name="iconamoon:profile-circle-fill" color="white" class="h-full text-3xl text-center"/>
-          <h1 class="font-bold align-middle">Profile</h1>
+          <h1 class="font-bold align-middle">Profilo</h1>
         </NuxtLink>
         <!-- Admin -->
         <NuxtLink to="/admin" v-if="isAdmin" class="navbar-link">

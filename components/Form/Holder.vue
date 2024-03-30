@@ -6,7 +6,7 @@
       </form>
 
       <div class="mb-4 text-center">
-        <NuxtLink to="/" class="btn-stealth py-2">Go back home</NuxtLink>
+        <NuxtLink to="/" class="btn-stealth py-2">Torna alla Home</NuxtLink>
       </div>
     </main>
   </div>

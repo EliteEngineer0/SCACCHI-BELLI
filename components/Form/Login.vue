@@ -11,12 +11,12 @@
       <label for="password" class="mb-1 inline-block font-semibold text-sm text-slate-200">Password</label>
       <input id="password" v-model="form.data.password" type="password" class="input px-3 py-1.5 w-full" required />
     </div>
-    <div class="mb-3 flex justify-end items-center">
-      <label for="remember-me" class="mr-1 text-sm text-light-100">Remember me</label>
+    <!-- <div class="mb-3 flex justify-end items-center">
+      <label for="remember-me" class="mr-1 text-sm text-light-100 disabled">Ricordami</label>
       <input id="remember-me" v-model="form.data.rememberMe" type="checkbox" class="w-4 h-4 checkbox-primary" />
-    </div>
+    </div> -->
     <div>
-      <button type="submit" :disabled="form.pending" class="btn-primary w-full mt-1">Log in</button>
+      <button type="submit" :disabled="form.pending" class="btn-primary w-full mt-3">Log in</button>
     </div>
 
     <NuxtLink to="/signin" class="text-link-primary py-3">Non hai ancora un account?</NuxtLink>
@@ -26,8 +26,8 @@
 <script lang="ts" setup>
   const form: any = reactive({
     data: {
-      email: "admin@gmail.com",
-      password: "password",
+      email: "",
+      password: "",
       rememberMe: false,
     },
     error: "",
