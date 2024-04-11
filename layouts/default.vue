@@ -7,15 +7,15 @@
           <Icon name="teenyicons:home-solid" color="white" class="header-icon"/>
           <h1 class="header-text">Home</h1>
         </NuxtLink>
+        <!-- Play -->
+        <NuxtLink to="/play" v-if="authUser" class="navbar-link">
+          <Icon name="streamline:chess-king-solid" color="white" class="header-icon"/>
+          <h1 class="header-text">Play</h1>
+        </NuxtLink>
         <!-- Profile -->
         <NuxtLink to="/private" v-if="authUser" class="navbar-link">
           <Icon name="iconamoon:profile-circle-fill" color="white" class="header-icon"/>
           <h1 class="header-text">Profilo</h1>
-        </NuxtLink>
-        <!-- Forum -->
-        <NuxtLink to="/forum" v-if="authUser" class="navbar-link">
-          <Icon name="material-symbols:forum" color="white" class="header-icon"/>
-          <h1 class="header-text">Forum</h1>
         </NuxtLink>
         <!-- Admin -->
         <NuxtLink to="/admin" v-if="isAdmin" class="navbar-link">

@@ -6,6 +6,7 @@
 @import "./misc.css";
 @import "./backgrounds.css";
 @import "./header.css";
+@import "./board.css";
 
 @tailwind base;
 @tailwind components;

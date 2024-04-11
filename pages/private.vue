@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-definePageMeta({
-  middleware: ["user-only"],
-});
-const authUser: any = useAuthUser();
-watch(authUser, () => {
-  if (!authUser.value) return navigateTo({name: "login"})
-  console.log(authUser)
-})
+  definePageMeta({
+    middleware: ["user-only"],
+  });
+  const authUser: any = useAuthUser();
+  watch(authUser, () => {
+    if (!authUser.value) return navigateTo({name: "login"})
+    console.log(authUser)
+  })
 </script>
 <template>
   <div class="text-dark text-center">

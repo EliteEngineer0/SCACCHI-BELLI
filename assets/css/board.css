@@ -1,0 +1,9 @@
+@layer components {
+    .chess-table{
+        @apply flex w-1/2 aspect-square grid grid-cols-8 gap-0;  
+    }       
+
+    .chess-square{
+        @apply aspect-square opacity-50; 
+    }
+}

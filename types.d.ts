@@ -31,3 +31,18 @@ interface UserWithoutPassword {
     id: string;
     role: string;
 }
+
+// Chess
+
+interface GameOptions{
+    white: boolean
+}
+
+interface Piece{
+    position: string
+    type: string
+}
+
+interface GamePosition{
+    pieces: Piece[]
+}

@@ -12,11 +12,15 @@
   }
 
   .text-dark {
-    @apply text-gray-800;
+    @apply text-gray-950;
   }
 
   .text-light-dark {
     @apply text-gray-700;
+  }
+
+  .text-light {
+    @apply text-gray-100;
   }
 
   .text-link-primary {
@@ -25,5 +29,15 @@
 
   .text-link-secondary {
     @apply text-gray-400 hover:text-gray-500;
+  }
+  
+  .unselectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                    not supported by any browser */
   }
 }
